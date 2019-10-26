@@ -10,10 +10,14 @@
     "react-scripts": "^3.0.1"
   },
   "dependencies": {
+    "@catchandrelease/arbor": "^0.77.0",
+    "arbor": "^0.8.2",
     "big.js": "^5.2.2",
     "github-fork-ribbon-css": "^0.2.1",
+    "jquery": "^3.4.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
