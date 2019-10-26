@@ -1,27 +1,34 @@
 ﻿import React from "react";
+import MenuBlank from "./menu_blank";
+import './side_menu.css';
+
+export default class SideMenu extends React.Component {
 
 
-export default class QuestionElement extends React.Component {
-
-  render() {
-    console.log("QuestionElement", this.props.value.answers);
-    let answersArray = "";
-    if (this.props.value.answers) {
-      answersArray = this.props.value.answers.map((answerElement, answerIndex) => 
-        <div className="answerGrid">
-          <AnswerGrid
-            answerElement = {answerElement}
-            answerIndex = {answerIndex}
-          />
-        </div>);
+  constructor() {
+    super();
+    this.state = {
+      childVisible: false
     }
-    
-    console.log("Returned by QuestionElement: ", answersArray);
-    return (
-      <div className="question_list_container">
-        <div>{this.props.value.question}</div>
-        <div>{ answersArray }</div>
-      </div>
-    );
+  }
+  
+  render() {
+      return (
+
+        <div>
+          <div className="sideButton" onClick={() => this.onClick()}>
+            Parent - click me to show/hide my child
+          </div>
+          {
+            this.state.childVisible
+              ? <MenuBlank />
+              : null
+          }
+        </div>
+      );
+  }
+
+  onClick() {
+    this.setState(prevState => ({ childVisible: !prevState.childVisible }));
   }
 }

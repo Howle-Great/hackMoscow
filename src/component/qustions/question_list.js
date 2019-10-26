@@ -1,6 +1,7 @@
 ﻿import React from "react";
 // import PropTypes from "prop-types";
 import QuestionElement from "./question_element";
+import SideMenu from "../menu/side_menu";
 
 
 export default class QuestionList extends React.Component {
@@ -15,9 +16,11 @@ export default class QuestionList extends React.Component {
       </div>
     )
     return (
+      [<SideMenu/>,
+
       <div>
        { questionsList }
-      </div>
+      </div>]
     )
   }
 }

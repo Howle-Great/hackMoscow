@@ -1,17 +1,10 @@
 import React from "react";
-// import Display from "./Display";
-// import ButtonPanel from "./ButtonPanel";
-// import calculate from "../logic/calculate";
+import {HashRouter, Switch, Link} from "react-router-dom";
 
 import QuestionList from "./qustions/question_list"
 import "./App.css";
 
 export default class App extends React.Component {
-  // state = {
-  //   total: null,
-  //   next: null,
-  //   operation: null,
-  // };
   state = {
     questions: [
       {
@@ -30,7 +23,8 @@ export default class App extends React.Component {
         ]
       },
       
-    ]
+    ],
+    
   };
 
 
