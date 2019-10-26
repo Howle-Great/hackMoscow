@@ -1,26 +1,48 @@
 import React from "react";
-import Display from "./Display";
-import ButtonPanel from "./ButtonPanel";
-import calculate from "../logic/calculate";
+// import Display from "./Display";
+// import ButtonPanel from "./ButtonPanel";
+// import calculate from "../logic/calculate";
+
+import QuestionList from "./qustions/question_list"
 import "./App.css";
 
 export default class App extends React.Component {
+  // state = {
+  //   total: null,
+  //   next: null,
+  //   operation: null,
+  // };
   state = {
-    total: null,
-    next: null,
-    operation: null,
+    questions: [
+      {
+        question: "Q1",
+        answers: [
+          "anw1",
+          "anw2",
+          "anw3",
+        ]
+      }, {
+        question: "Q2",
+        answers: [
+          "anw1",
+          "anw2",
+          "anw3",
+        ]
+      },
+      
+    ]
   };
 
-  handleClick = buttonName => {
-    this.setState(calculate(this.state, buttonName));
-  };
 
   render() {
+    console.log("Questions: ", this.state.questions);
     return (
       <div className="component-app">
-        <Display value={this.state.next || this.state.total || "0"} />
-        <ButtonPanel clickHandler={this.handleClick} />
+        <QuestionList value={this.state.questions}/>
       </div>
     );
   }
 }
+
+// <Display value={this.state.next || this.state.total || "0"} />
+// <ButtonPanel clickHandler={this.handleClick} />
