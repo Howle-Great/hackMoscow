@@ -17,7 +17,6 @@ export default class SideMenu extends React.Component {
 
         <div>
           <div className="sideButton" onClick={() => this.onClick()}>
-            Parent - click me to show/hide my child
           </div>
           {
             this.state.childVisible

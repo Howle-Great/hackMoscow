@@ -1,10 +1,13 @@
-import React from "react";
-import {HashRouter, Switch, Link} from "react-router-dom";
+import * as React from "react";
+import {Route, Switch, BrowserRouter, Link} from "react-router-dom";
 
-import QuestionList from "./qustions/question_list"
+// import QuestionList from "./qustions/question_list";
+import MainMenu from "./main_menu/main_menu";
+import StudentGrafPage from "./student/student_graf_page";
+import TeachersStudentsList from "./teacher/teachers_students_list";
 import "./App.css";
 
-export default class App extends React.Component {
+export default class App extends React.Component  {
   state = {
     questions: [
       {
@@ -24,16 +27,22 @@ export default class App extends React.Component {
       },
       
     ],
-    
+
   };
 
 
   render() {
     console.log("Questions: ", this.state.questions);
     return (
-      <div className="component-app">
-        <QuestionList value={this.state.questions}/>
-      </div>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/student" component={StudentGrafPage}/>
+            <Route exact path="/teacher" component={TeachersStudentsList}/>
+            <Route exact path="/" component={MainMenu}/>
+
+          </Switch> 
+        </BrowserRouter>
+      
     );
   }
 }
